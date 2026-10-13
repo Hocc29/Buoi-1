@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Mini Task Manager</h1>
+      <p>Bài kiểm tra thực hành HTML, CSS, JavaScript</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- A: Form thêm công việc -->
+    <section class="card">
+      <h2>Thêm công việc</h2>
+      <form id="task-form" class="task-form" novalidate>
+        <label for="title" class="form-label">Tên công việc <span class="required">*</span></label>
+        <input type="text" id="title" name="title" placeholder="Nhập tên công việc..." autocomplete="off">
+        <small class="error" id="title-error"></small>
+
+        <label for="dueDate" class="form-label">Hạn hoàn thành</label>
+        <input type="date" id="dueDate" name="dueDate">
+
+        <label for="priority" class="form-label">Mức ưu tiên</label>
+        <select id="priority" name="priority">
+          <option value="Cao">Cao</option>
+          <option value="Trung bình" selected>Trung bình</option>
+          <option value="Thấp">Thấp</option>
+        </select>
+
+        <button type="submit" class="btn btn-primary form-submit">Thêm</button>
+      </form>
+    </section>
+
+    <!-- A: Tìm kiếm và lọc -->
+    <section class="card">
+      <div class="toolbar">
+        <div class="form-group">
+          <label for="search">Tìm kiếm theo tên</label>
+          <input type="search" id="search" placeholder="Nhập từ khóa...">
+        </div>
+        <div class="form-group">
+          <label for="filter-status">Lọc trạng thái</label>
+          <select id="filter-status">
+            <option value="all">Tất cả</option>
+            <option value="pending">Chưa hoàn thành</option>
+            <option value="done">Đã hoàn thành</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- A: Vùng hiển thị danh sách -->
+    <section class="card">
+      <div class="list-header">
+        <h2>Danh sách công việc</h2>
+        <span id="task-count" class="task-count"></span>
+      </div>
+      <ul id="task-list" class="task-list"></ul>
+      <p id="empty-message" class="empty-message" hidden>Không có công việc nào phù hợp.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    Sinh viên: Nguyễn Trung Vũ Học  |  MSSV: 224001719   | Lớp: TUD D2024
+  </footer>
+</body>
+</html>
